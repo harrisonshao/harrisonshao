@@ -3,106 +3,40 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Harrison Shao</title>
-
+  <title>Your Name</title>
   <style>
-    :root{
-      --bg0:#070A12;
-      --bg1:#0B1020;
-      --text:#EAF0FF;
-      --muted: rgba(234,240,255,.7);
-      --card: rgba(255,255,255,.06);
-      --border: rgba(255,255,255,.12);
-    }
-
-    *{ box-sizing: border-box; }
-
-    body{
-      margin:0;
+    body {
       font-family: Arial, sans-serif;
-      color: var(--text);
-      background: linear-gradient(180deg, var(--bg0), var(--bg1));
-      overflow-x: hidden;
-    }
-
-    /* Floating background */
-    .bg{
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    .blob{
-      position: absolute;
-      width: 520px;
-      height: 520px;
-      border-radius: 999px;
-      filter: blur(60px);
-      opacity: .55;
-      animation: float 22s ease-in-out infinite;
-      mix-blend-mode: screen;
-    }
-
-    .b1{ background: rgba(120,90,255,.9); top:-160px; left:-120px; }
-    .b2{ background: rgba(0,210,255,.9); top:40px; right:-160px; animation-duration: 26s; }
-    .b3{ background: rgba(255,70,200,.9); bottom:-220px; left:20%; animation-duration: 30s; }
-
-    @keyframes float{
-      0%{ transform: translate(0,0) scale(1); }
-      50%{ transform: translate(40px,-30px) scale(1.05); }
-      100%{ transform: translate(0,0) scale(1); }
-    }
-
-    .wrap{
       max-width: 900px;
-      margin: 64px auto;
+      margin: 60px auto;
       padding: 0 20px;
+      line-height: 1.6;
     }
-
-    h1{ margin-bottom: 6px; }
-    h2{ margin-top: 32px; }
-
-    .muted{ color: var(--muted); }
-
-    .buttons a{
+    .buttons a {
       display: inline-block;
-      margin: 10px 10px 0 0;
+      margin-right: 10px;
       padding: 10px 14px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
+      border: 1px solid #111;
+      border-radius: 10px;
       text-decoration: none;
-      color: var(--text);
-      background: rgba(255,255,255,.05);
+      color: #111;
     }
-
-    .card{
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 14px;
       padding: 16px;
       margin: 16px 0;
-      backdrop-filter: blur(10px);
     }
-
-    iframe{
-      width:100%;
-      height:900px;
-      border:none;
-      border-radius: 14px;
+    h1 {
+      margin-bottom: 0;
     }
-
-    a{ color: #9dd6ff; }
+    .muted {
+      color: #555;
+      margin-top: 6px;
+    }
   </style>
 </head>
-
 <body>
-  <div class="bg">
-    <div class="blob b1"></div>
-    <div class="blob b2"></div>
-    <div class="blob b3"></div>
-  </div>
-
 
   <h1>Harrison Shao</h1>
   <p class="muted">University of Pennsylvania '29 | Philadelphia, PA </p>
