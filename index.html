@@ -4,39 +4,86 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Harrison Shao</title>
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 0 20px;
-      line-height: 1.6;
-    }
-    .buttons a {
-      display: inline-block;
-      margin-right: 10px;
-      padding: 10px 14px;
-      border: 1px solid #111;
-      border-radius: 10px;
-      text-decoration: none;
-      color: #111;
-    }
-    .card {
-      border: 1px solid #ddd;
-      border-radius: 14px;
-      padding: 16px;
-      margin: 16px 0;
-    }
-    h1 {
-      margin-bottom: 0;
-    }
-    .muted {
-      color: #555;
-      margin-top: 6px;
-    }
-  </style>
-</head>
-<body>
+  :root{
+    --bg0:#070A12;
+    --bg1:#0B1020;
+    --text:#EAF0FF;
+    --muted: rgba(234,240,255,.72);
+    --card: rgba(255,255,255,.06);
+    --border: rgba(255,255,255,.12);
+  }
+
+  *{ box-sizing: border-box; }
+
+  html, body { height: 100%; }
+
+  body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    color: var(--text);
+    background: radial-gradient(1200px 700px at 20% 10%, rgba(120,90,255,.18), transparent 60%),
+                radial-gradient(900px 600px at 80% 20%, rgba(0,200,255,.14), transparent 55%),
+                radial-gradient(900px 700px at 50% 90%, rgba(255,70,200,.10), transparent 60%),
+                linear-gradient(180deg, var(--bg0), var(--bg1));
+    overflow-x:hidden;
+  }
+
+  /* Floating glow layer */
+  .bg{
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .blob{
+    position: absolute;
+    width: 520px;
+    height: 520px;
+    filter: blur(55px);
+    opacity: .55;
+    border-radius: 999px;
+    transform: translate3d(0,0,0);
+    mix-blend-mode: screen;
+    animation: float 18s ease-in-out infinite;
+  }
+
+  .b1{ left: -120px; top: -140px; background: radial-gradient(circle at 30% 30%, rgba(120,90,255,.95), transparent 60%); }
+  .b2{ right: -160px; top: 60px; background: radial-gradient(circle at 35% 35%, rgba(0,210,255,.95), transparent 60%); animation-duration: 22s; }
+  .b3{ left: 20%; bottom: -220px; background: radial-gradient(circle at 35% 35%, rgba(255,70,200,.9), transparent 60%); animation-duration: 26s; }
+  .b4{ right: 12%; bottom: -180px; background: radial-gradient(circle at 35% 35%, rgba(80,255,190,.55), transparent 60%); animation-duration: 30s; opacity:.35; }
+
+  @keyframes float{
+    0%   { transform: translate3d(0,0,0) scale(1); }
+    25%  { transform: translate3d(40px, -30px, 0) scale(1.03); }
+    50%  { transform: translate3d(-30px, 40px, 0) scale(.98); }
+    75%  { transform: translate3d(35px, 20px, 0) scale(1.02); }
+    100% { transform: translate3d(0,0,0) scale(1); }
+  }
+
+  /* Page container */
+  .wrap{
+    max-width: 900px;
+    margin: 64px auto;
+    padding: 0 20px;
+  }
+
+  /* Frosted cards */
+  .card{
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px;
+    margin: 16px 0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  h1{ margin: 0 0 6px 0;
+
 
   <h1>Harrison Shao</h1>
   <p class="muted">University of Pennsylvania '29 | Philadelphia, PA </p>
